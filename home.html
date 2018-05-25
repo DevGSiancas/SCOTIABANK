@@ -1,0 +1,219 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+</head>
+<body>
+  <style type="text/css">
+    @font-face{font-family:Frutiger55Roman;src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");}
+    @font-face{font-family:Frutiger55RomanBold;src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");}
+    @font-face{font-family:Arial;src:url("Fonts/Arial.ttf");}
+    body,html{padding:0;margin:0;font-family:Frutiger55Roman, Arial;}
+    strong{font-family:Frutiger55RomanBold;}
+
+    .wrapper{width: 100%;max-width: 980px;margin: auto;}
+
+    .wrapper .scotia-btn{
+      background:#d81e05;
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 5px;
+      width: 181px;
+      border-radius: 7px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .wrapper .scotia-banner-btn{
+      background:#d81e05;
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 7px;
+      padding: 12px 35px;
+      color: #fff;
+    }
+
+    .content h1{
+      text-align:left;
+      color:#515151;
+      margin:0 30px 30px 30px;
+      font-family: Frutiger55Roman;
+    }
+
+    .content p{
+      color:#515151;
+    }
+
+    .content.center{
+      text-align: center;
+    }
+
+    .content.gray{
+      background:#f2f2f2;
+      padding:25px 0;
+      margin: 25px 0;
+    }
+
+    .content .img-desc{
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      margin: 10px 1.2%;
+      max-width: 190px;
+      width: 22%;
+      color:#666666;
+      font-size: 1.1em;
+    }
+
+    .content .horizontal{
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .content .horizontal .block{
+
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px 0;
+      padding: 20px 2%;
+    }
+
+    .content .horizontal .block h2{
+      color:#fff;
+      text-align: left;
+      margin: 0;
+      text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+      font-family: Frutiger55RomanBold;
+    }
+
+    .content .horizontal .block p{
+      margin:0 0 15px 0;
+    }
+
+    .content .horizontal .block ul{
+      text-align: left;
+      list-style: none;
+      color:#515151;
+    }
+
+    .content .horizontal .block ul li::before {
+      content: "•"; color: red;
+      display: inline-block; width: 1em;
+      margin-left: -1em
+    }
+
+    .content .horizontal .block.bottom{
+      vertical-align: bottom;
+    }
+
+    .content .horizontal .block.two{
+      width: 25%;
+      text-align: center;
+    }
+
+    .content .horizontal .block.two{
+      width: 58%;
+      text-align: center;
+    }
+
+    .content .horizontal .block.three{
+      width: 30%;
+      text-align: center;
+    }
+
+    .content .horizontal .block.half{
+      width:45%;
+    }
+
+
+
+    @media screen and (max-width: 768px){
+
+      .content .img-desc{
+        display: block;
+        text-align: center;
+        vertical-align: top;
+        margin: 10px auto;
+        max-width: 200px;
+        width: 90%;
+      }
+
+      .content .horizontal .block{
+        display: block;
+      }
+
+      .content .horizontal .block p{
+        max-width: 85%;
+        margin: 12px auto;
+      }
+
+      .content .horizontal .block.three,
+      .content .horizontal .block.half,
+      .content .horizontal .block.two{
+        width: 95%;
+        margin: 20px auto;
+      }
+    }
+  </style>
+   <!--  GLOBAL STYLES  -->
+  <style type="text/css">
+    @media screen and (max-width: 768px){
+      .content{margin:10px 0;padding: 10px 0;}
+      .content h1{text-align:center;font-size: 1.8em;margin:5px 0 30px 0;}
+      .content.gray{margin:0}
+      .content .hide-mobil{display:none !important;margin:0;padding:0;}
+      .content .show-mobil{display:block !important;}
+      .content.gray-mobil{background:#f2f2f2;padding: 20px 0;margin: 10px 0;}
+      .content.white-mobil{background:#ffffff;}
+      .content.white-mobil h1{margin:0 0 10px 0;padding:0}
+    }
+  </style>
+
+
+
+  <div class="wrapper">
+
+
+  </div>
+<script type="text/javascript">
+
+  // This function show the content tab
+  function showTab(event, currentTab){
+    var tabs = document.getElementsByClassName("tab-content");
+    var tablinks = document.getElementsByClassName("tablink");
+    var len = tabs.length;
+
+    for(var i = 0; i < len; i++)
+      tabs[i].style.display = "none";
+
+    for (var i = 0; i < len; i++)
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    document.getElementById(currentTab).style.display = "block";
+    event.currentTarget.className += " active";
+  }
+
+  // This function show the slide selected
+  function slideTo(event , currentSlide){
+    var slides = document.getElementsByClassName("slide-page");
+    var control = document.getElementsByClassName("navs-control");
+    var len = slides.length;
+
+    for(var i = 0; i < len; i++){
+      if(i == currentSlide)
+        slides[i].style.display = "block";
+      else
+        slides[i].style.display = "none";
+    }
+
+    for (var i = 0; i < len; i++)
+        control[i].className = control[i].className.replace(" active", "");
+
+    event.currentTarget.className += " active";
+  }
+
+</script>
+</body>
+</html>
