@@ -4,21 +4,10 @@
 </head>
 <body>
 
-  <!--  GLOBAL STYLES  -->
-  <style type="text/css">
-    @media screen and (max-width: 768px){
-      .content h1{text-align: center;}
-      .content .hide-mobil{display:none !important;}
-      .content .show-mobil{display:block !important;}
-      .content .gray-mobil{background:#f2f2f2;}
-    }
-  </style>
-
-
-
   <style type="text/css">
     @font-face{font-family:Frutiger55Roman;src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");}
     @font-face{font-family:Frutiger55RomanBold;src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");}
+    @font-face{font-family:Arial;src:url("Fonts/Arial.ttf");}
     body,html{padding:0;margin:0;font-family:Frutiger55Roman, Arial;}
     strong{font-family:Frutiger55RomanBold;}
 
@@ -28,7 +17,7 @@
       background:#d81e05;
       display: inline-block;
       text-decoration: none;
-      padding: 9px 5px;
+      padding: 12px 5px;
       width: 181px;
       border-radius: 7px;
       text-align: center;
@@ -61,8 +50,8 @@
 
     .content.gray{
       background:#f2f2f2;
-      padding:30px 0;
-      margin: 30px 0;
+      padding:25px 0;
+      margin: 25px 0;
     }
 
     .content .img-desc{
@@ -147,7 +136,7 @@
         display: block;
         text-align: center;
         vertical-align: top;
-        margin: 40px auto;
+        margin: 10px auto;
         max-width: 200px;
         width: 90%;
       }
@@ -156,12 +145,31 @@
         display: block;
       }
 
+      .content .horizontal .block p{
+        max-width: 85%;
+        margin: 12px auto;
+      }
+
       .content .horizontal .block.three,
       .content .horizontal .block.half,
       .content .horizontal .block.two{
         width: 95%;
         margin: 20px auto;
       }
+    }
+  </style>
+
+   <!--  GLOBAL STYLES  -->
+  <style type="text/css">
+    @media screen and (max-width: 768px){
+      .content{margin:10px 0;padding: 10px 0;}
+      .content h1{text-align:center;font-size: 1.8em;margin:5px 0 30px 0;}
+      .content.gray{margin:0}
+      .content .hide-mobil{display:none !important;margin:0;padding:0;}
+      .content .show-mobil{display:block !important;}
+      .content.gray-mobil{background:#f2f2f2;padding: 20px 0;margin: 10px 0;}
+      .content.white-mobil{background:#ffffff;}
+      .content.white-mobil h1{margin:0 0 10px 0;padding:0}
     }
   </style>
 
@@ -183,7 +191,7 @@
       .banner h1{
         text-align: center;
         color:#515151;
-        margin: 40px 15px;
+        margin: 40px 15px 20px 15px;
       }
 
       .banner .bg{
@@ -222,7 +230,7 @@
       @media screen and (max-width: 768px){
 
           .banner .bg{
-            height: 305px;
+            height: 225px;
           }
 
           .banner .desc{
@@ -241,12 +249,11 @@
             max-width: 360px;
           }
 
-
           .banner h1{
-            padding: 15px 20px 10px 20px;
+            padding: 15px 20px 0 20px;
+            margin: 15px 0 0 0;
             font-size: 1.8em;
           }
-
       }
     </style>
     <div class="banner">
@@ -261,6 +268,7 @@
        <h1>¿Por qué elegir una CUENTA FREE?</h1>
     </div>
 
+    <!-- IMAGES DESC STYLES -->
     <div class="content center">
       <div class="img-desc">
         <img src="Icons/dollar.png">
@@ -306,21 +314,20 @@
       .tab-content#tab4{border-bottom:3px solid #FFCC00;}
 
       .tab-content .question{margin: 15px}
-      .tab-content .question label{color:#515151;cursor:pointer}
-      .tab-content .question span{display:inline-block;border:1px solid #515151;margin-right:10px;padding:0 4px;color:#515151;}
+      .tab-content .question label{color:#515151;cursor:pointer;padding-left:30px;position:relative;display: block;}
+      .tab-content .question label::before{content:"+";border:1px solid #515151;text-align:center;padding:0 2px;
+                                           color:#515151;width:1em;margin-right:10px;position: absolute;left: 0;}
       .tab-content .question div{display: none;}
       .tab-content .question input{opacity:0;position:absolute;float:left;}
       .tab-content .question input:checked + .ans{display: block}
       .tab-content .question p{padding: 3px 5px 20px 30px;color:#666666;border-bottom:1px solid #666666}
 
       @media screen and (max-width: 768px){
-
         .tabs{padding:0}
         .tab-header span{display:block;padding:15px 2% 8px 2%;width:96%}
 
         .tab-content strong{padding:8px;}
         .tab-content ul li{padding:8px 14px 8px 0px;}
-
       }
     </style>
     <div class="tabs">
@@ -357,7 +364,7 @@
       <div class="tab-content" id="tab3">
 
         <div class="question">
-          <label for="ask1"><span>+</span>¿Qué es la Cuenta Free?</label>
+          <label for="ask1">¿Qué es la Cuenta Free?</label>
           <input type="checkbox" id="ask1">
           <div class="ans">
             <p>Es una cuenta diseñada para que realices operaciones ilimitadas, sin costo, en todo el Perú.</p>
@@ -365,7 +372,7 @@
         </div>
 
         <div class="question">
-          <label for="ask2"><span>+</span>¿Dónde puedo abrir una Cuenta Free?</label>
+          <label for="ask2">¿Dónde puedo abrir una Cuenta Free?</label>
           <input type="checkbox" id="ask2">
           <div class="ans">
             <p>En cualquier agencia de la red Scotiabank Perú.</p>
@@ -373,7 +380,7 @@
         </div>
 
         <div class="question">
-          <label for="ask3"><span>+</span>¿Me cobran comisión por mantenimiento de cuenta?</label>
+          <label for="ask3">¿Me cobran comisión por mantenimiento de cuenta?</label>
           <input type="checkbox" id="ask3">
           <div class="ans">
             <p>No cobramos comisión, independientemente del saldo de tu cuenta.</p>
@@ -381,7 +388,7 @@
         </div>
 
         <div class="question">
-          <label for="ask4"><span>+</span>¿Hay un monto mínimo para abrir esta cuenta?</label>
+          <label for="ask4">¿Hay un monto mínimo para abrir esta cuenta?</label>
           <input type="checkbox" id="ask4">
           <div class="ans">
             <p>No, puedes abrirla con el monto que desees.</p>
@@ -389,7 +396,7 @@
         </div>
 
         <div class="question">
-          <label for="ask5"><span>+</span>¿Cuántas transacciones libres en ventanilla tengo al mes?</label>
+          <label for="ask5">¿Cuántas transacciones libres en ventanilla tengo al mes?</label>
           <input type="checkbox" id="ask5">
           <div class="ans">
             <p>Tienes transacciones ilimitadas y sin costo, hasta el monto máximo permitido por operación.</p>
@@ -397,7 +404,7 @@
         </div>
 
         <div class="question">
-          <label for="ask6"><span>+</span>¿Puedo realizar retiros desde la red de cajeros Scotiabank sin costo?</label>
+          <label for="ask6">¿Puedo realizar retiros desde la red de cajeros Scotiabank sin costo?</label>
           <input type="checkbox" id="ask6">
           <div class="ans">
             <p>Sí, los retiros son ilimitados y sin costo, hasta el monto máximo permitido por operación.</p>
@@ -405,7 +412,7 @@
         </div>
 
         <div class="question">
-          <label for="ask7"><span>+</span> ¿Cuáles son las principales ventajas que me da la Cuenta Free?</label>
+          <label for="ask7">¿Cuáles son las principales ventajas que me da la Cuenta Free?</label>
           <input type="checkbox" id="ask7">
           <div class="ans">
             <p>
@@ -427,7 +434,7 @@
         </div>
 
        <div class="question">
-          <label for="ask8"><span>+</span>¿Puedo realizar operaciones interplaza y sin costo con mi Cuenta Free?</label>
+          <label for="ask8">¿Puedo realizar operaciones interplaza y sin costo con mi Cuenta Free?</label>
           <input type="checkbox" id="ask8">
           <div class="ans">
             <p>Sí, vas a poder hacerlo siempre.</p>
@@ -435,7 +442,7 @@
         </div>
 
         <div class="question">
-          <label for="ask9"><span>+</span>¿Me cobran por realizar operaciones interplaza con Cuenta Free en Scotiabank y a otros bancos?</label>
+          <label for="ask9">¿Me cobran por realizar operaciones interplaza con Cuenta Free en Scotiabank y a otros bancos?</label>
           <input type="checkbox" id="ask9">
           <div class="ans">
             <p>No se cobra comisión ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
@@ -443,7 +450,7 @@
         </div>
 
         <div class="question">
-          <label for="ask10"><span>+</span>¿Qué es la comisión interplaza?</label>
+          <label for="ask10">¿Qué es la comisión interplaza?</label>
           <input type="checkbox" id="ask10">
           <div class="ans">
             <p>Es el cobro de la comisión por realizar operaciones en localidades diferentes a aquella donde abriste una cuenta.</p>
@@ -451,7 +458,7 @@
         </div>
 
         <div class="question">
-          <label for="ask11"><span>+</span>¿Me cobran por realizar transferencias a otros bancos?</label>
+          <label for="ask11">¿Me cobran por realizar transferencias a otros bancos?</label>
           <input type="checkbox" id="ask11">
           <div class="ans">
             <p>No se cobra comisión propia y tampoco comisión CCE por transferencias a otros bancos, ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
@@ -459,7 +466,7 @@
         </div>
 
         <div class="question">
-          <label for="ask12"><span>+</span>¿Me cobran por realizar el pago de tarjetas de crédito de otros bancos?</label>
+          <label for="ask12">¿Me cobran por realizar el pago de tarjetas de crédito de otros bancos?</label>
           <input type="checkbox" id="ask12">
           <div class="ans">
             <p>No se cobra comisión por ese pago, ya sea que lo realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
@@ -467,7 +474,7 @@
         </div>
 
         <div class="question">
-          <label for="ask13"><span>+</span>¿Me envían estado de cuenta mensual?</label>
+          <label for="ask13">¿Me envían estado de cuenta mensual?</label>
           <input type="checkbox" id="ask13">
           <div class="ans">
             <p>No, pero puedes consultar tus saldos y movimientos sin costo a través de Scotia en Línea.</p>
@@ -475,7 +482,7 @@
         </div>
 
         <div class="question">
-          <label for="ask14"><span>+</span>¿Los saldos de esta cuenta están cubiertos por el Fondo de Seguro de Depósitos?</label>
+          <label for="ask14">¿Los saldos de esta cuenta están cubiertos por el Fondo de Seguro de Depósitos?</label>
           <input type="checkbox" id="ask14">
           <div class="ans">
             <p>Sí, los saldos de todas las cuentas de ahorro están cubiertos por el Fondo de Seguro de Depósitos, el cual varía cada trimestre. Consulta el monto de la cobertura actual enwww.fsd.org.pe.</p>
@@ -483,7 +490,7 @@
         </div>
 
         <div class="question">
-          <label for="ask15"><span>+</span>¿Qué es la TREA?</label>
+          <label for="ask15">¿Qué es la TREA?</label>
           <input type="checkbox" id="ask15">
           <div class="ans">
             <p>Es la Tasa de Rendimiento Efectivo Anual, que te permite conocer cuánto ganarás efectivamente por el dineroquedeposites, incluyendo los intereses que recibirás y los costos fijos de tu cuenta.</p>
@@ -491,7 +498,7 @@
         </div>
 
         <div class="question">
-          <label for="ask16"><span>+</span>¿Qué es el saldo promedio mensual?</label>
+          <label for="ask16">¿Qué es el saldo promedio mensual?</label>
           <input type="checkbox" id="ask16">
           <div class="ans">
             <p>Es el monto promedio que hay en tu cuenta en el lapso de un mes o 30 días. Sirve para calcular la TEA (tasa efectiva anual) y los costos de mantenimiento, pues dependen del saldo promedio en la cuenta mensual.</p>
@@ -499,7 +506,7 @@
         </div>
 
         <div class="question">
-          <label for="ask16"><span>+</span>¿Qué es el saldo mínimo de equilibrio para obtener rendimiento?</label>
+          <label for="ask16">¿Qué es el saldo mínimo de equilibrio para obtener rendimiento?</label>
           <input type="checkbox" id="ask16">
           <div class="ans">
             <p>Es el saldo que se debe mantener en una cuenta de ahorros, sin que se realice transacción alguna, generando los intereses suficientes en un mes (de 30 días), para cubrir las comisiones y los gastos asociados al mantenimiento de la cuenta de ahorros. Al final del mes no se perderá capital ni se ganará rendimiento.</p>
@@ -520,8 +527,10 @@
       </div>
     </div>
 
-    <div class="content gray">
+    <div class="content gray white-mobil">
+
       <h1>Abre tu Cuenta Free</h1>
+
       <div class="horizontal">
         <div class="block three">
           <p>Si ya tienes un producto con nosotros, puedes abrir tu cuenta en línea usando tu computadora o celular.</p>
@@ -531,12 +540,11 @@
           <a href="#" class="scotia-btn">Ubícanos</a>
         </div>
         <div class="block two hide-mobil">
-          <img src="Images/map.png" class="map" width="85%">
+          <img src="Images/map.png" class="map" width="85%" style="border:1px solid rgba(0,0,0,0.3)">
         </div>
       </div>
 
-
-      <div class="horizontal" style="background-image:url('Links/background1.jpeg');">
+      <div class="horizontal hide-mobil" style="background-image:url('Links/background1.jpeg');">
         <div class="block half bottom">
           <h2>¿POR QUÉ ES<br>IMPORTANTE AHORRAR?</h2>
         </div>
@@ -560,7 +568,7 @@
              padding: 0 10%;
              margin: auto;
              position: relative;
-             top: 30%;
+             top: 25%;
              display: none;
            }
 
@@ -641,9 +649,9 @@
         </div>
       </div>
 
+      <h1 class="hide-mobil">Scotiabank estés donde estés:</h1>
 
-      <h1>Scotiabank estés donde estés:</h1>
-      <div class="horizontal">
+      <div class="horizontal hide-mobil">
         <div class="block one">
           <img src="Icons/devices.png" width="250">
         </div>
@@ -656,11 +664,14 @@
           </ul>
         </div>
       </div>
+
     </div>
 
     <div class="content gray-mobil">
+
       <h1>Otros productos que te pueden interesar</h1>
-      <!--  GRID STYLES  -->
+
+      <!--  GRID 3 STYLES  -->
       <style type="text/css">
         .grid-3{
           width: 95%;
@@ -687,9 +698,7 @@
           background-size: cover;
         }
 
-        .grid-3 .grid p{
-          max-width: 95%;
-        }
+        .grid-3 .grid p{max-width: 92%;}
 
         @media screen and (max-width:768px){
 
@@ -702,6 +711,10 @@
             height: 240px;
             padding-bottom: 0%;
             margin: auto;
+          }
+
+          .grid-3 .grid img{
+            max-width: 420px;
           }
 
           .slider{
@@ -734,22 +747,17 @@
           </div>
         </div>
       </div>
+
     </div>
-
-
 
   </div>
 
 
 
-
-
-
-
 <script type="text/javascript">
 
+  // This function show the content tab
   function showTab(event, currentTab){
-
     var tabs = document.getElementsByClassName("tab-content");
     var tablinks = document.getElementsByClassName("tablink");
     var len = tabs.length;
@@ -764,8 +772,8 @@
     event.currentTarget.className += " active";
   }
 
+  // This function show the slide selected
   function slideTo(event , currentSlide){
-
     var slides = document.getElementsByClassName("slide-page");
     var control = document.getElementsByClassName("navs-control");
     var len = slides.length;
@@ -781,7 +789,6 @@
         control[i].className = control[i].className.replace(" active", "");
 
     event.currentTarget.className += " active";
-
   }
 
 </script>
