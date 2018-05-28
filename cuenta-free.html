@@ -137,6 +137,14 @@
       border-radius: 50%;
     }
 
+    .content .horizontal .block #map{
+      height: 280px;
+      width: 100%;
+      max-width: 500px;
+      background: #212121;
+      margin: -12px 0 0 20px;
+    }
+
     .content .horizontal .block.bottom{
       vertical-align: bottom;
     }
@@ -321,7 +329,6 @@
           }
       }
     </style>
-
     <div class="banner">
       <div class="bg"></div>
       <div class="desc">
@@ -381,13 +388,15 @@
       .tab-content#tab4{border-bottom:3px solid #FFCC00;}
 
       .tab-content .question{margin: 15px}
-      .tab-content .question label{color:#515151;cursor:pointer;padding-left:30px;position:relative;display: block;}
-      .tab-content .question label::before{content:"+";border:1px solid #515151;text-align:center;padding:0 2px;
+      .tab-content .question label{color:#515151;cursor:pointer;padding-left:30px;position:relative;display:inline-block;}
+      .tab-content .question label span{border:1px solid #515151;text-align:center;padding:0 1px;
                                            color:#515151;width:1em;margin-right:10px;position: absolute;left: 0;}
-      .tab-content .question div{display: none;}
-      .tab-content .question input{opacity:0;position:absolute;float:left;}
-      .tab-content .question input:checked + .ans{display: block}
-      .tab-content .question p{padding: 3px 5px 20px 30px;color:#666666;border-bottom:1px solid #666666}
+      .tab-content .question label.active span{color:#ffffff;background:#FF6600;border:1px solid #FF6600;}
+      .tab-content .question div{display: none;border-bottom:1px solid #666666}      
+      .tab-content .question p{padding: 3px 5px 20px 30px;color:#666666;}
+      .tab-content .question ul{padding:0;margin:0;}
+      .tab-content .question ul li{padding:10px 0 10px 65px;margin:10px 0;list-style:none;position:relative;}
+      .tab-content .question ul li span{position:absolute;left:30px;}
 
       @media screen and (max-width: 768px){
         .tabs{padding:0}
@@ -430,150 +439,133 @@
       <div class="tab-content" id="tab3">
 
         <div class="question">
-          <label for="ask1">¿Qué es la Cuenta Free?</label>
-          <input type="checkbox" id="ask1">
+          <label class="ask"><span>+</span>¿Qué es la Cuenta Free?</label>
           <div class="ans">
             <p>Es una cuenta diseñada para que realices operaciones ilimitadas, sin costo, en todo el Perú.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask2">¿Dónde puedo abrir una Cuenta Free?</label>
-          <input type="checkbox" id="ask2">
+          <label class="ask"><span>+</span>¿Dónde puedo abrir una Cuenta Free?</label>
           <div class="ans">
             <p>En cualquier agencia de la red Scotiabank Perú.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask3">¿Me cobran comisión por mantenimiento de cuenta?</label>
-          <input type="checkbox" id="ask3">
+          <label class="ask"><span>+</span>¿Me cobran comisión por mantenimiento de cuenta?</label>
           <div class="ans">
             <p>No cobramos comisión, independientemente del saldo de tu cuenta.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask4">¿Hay un monto mínimo para abrir esta cuenta?</label>
-          <input type="checkbox" id="ask4">
+          <label class="ask"><span>+</span>¿Hay un monto mínimo para abrir esta cuenta?</label>
           <div class="ans">
             <p>No, puedes abrirla con el monto que desees.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask5">¿Cuántas transacciones libres en ventanilla tengo al mes?</label>
-          <input type="checkbox" id="ask5">
+          <label class="ask"><span>+</span>¿Cuántas transacciones libres en ventanilla tengo al mes?</label>
           <div class="ans">
             <p>Tienes transacciones ilimitadas y sin costo, hasta el monto máximo permitido por operación.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask6">¿Puedo realizar retiros desde la red de cajeros Scotiabank sin costo?</label>
-          <input type="checkbox" id="ask6">
+          <label class="ask"><span>+</span>¿Puedo realizar retiros desde la red de cajeros Scotiabank sin costo?</label>
           <div class="ans">
             <p>Sí, los retiros son ilimitados y sin costo, hasta el monto máximo permitido por operación.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask7">¿Cuáles son las principales ventajas que me da la Cuenta Free?</label>
-          <input type="checkbox" id="ask7">
+          <label class="ask"><span>+</span>¿Cuáles son las principales ventajas que me da la Cuenta Free?</label>
           <div class="ans">
-            <p>
-                1. Sin costo de mantenimiento, ni monto mínimo de apertura.
-                2. Retiros y depósitos ilimitados en ventanilla, sin importar dónde los
-                realices.
-                3. Operaciones ilimitadas y sin costo de transferencias, vía CCE por
-                Internet y ventanillas, sin importar dónde los realices.
-                4. Retiros sin costo en todos los cajeros automáticos de la red Scotiabank.
-                5. Consumos sin costo con tu Tarjeta de Débito ScotiaCard en miles de
-                establecimientos afiliados.
-                6. Sin costo en pagos, transferencias, consultas de saldos y movimientos
+            <ul>
+              <li><span>1.</span>Sin costo de mantenimiento, ni monto mínimo de apertura.</li>
+              <li><span>2.</span>Retiros y depósitos ilimitados en ventanilla, sin importar dónde los
+                realices.</li>
+              <li><span>3.</span>Operaciones ilimitadas y sin costo de transferencias, vía CCE por
+                Internet y ventanillas, sin importar dónde los realices.</li>
+              <li><span>4.</span>Retiros sin costo en todos los cajeros automáticos de la red Scotiabank.</li>
+              <li><span>5.</span>Consumos sin costo con tu Tarjeta de Débito ScotiaCard en miles de
+                establecimientos afiliados.</li>
+              <li><span>6.</span>Sin costo en pagos, transferencias, consultas de saldos y movimientos
                 en nuestros canales virtuales (Scotia en Línea y Banca Móvil),
                 terminales de pagos y consultas, cajeros automáticos de la red
-                Scotiabank y banca telefónica.
-                7. Sin costo de mantenimiento para la Tarjeta de Débito Clásica.
-            </p>
+                Scotiabank y banca telefónica.</li>
+              <li><span>7.</span>Sin costo de mantenimiento para la Tarjeta de Débito Clásica.</li>
+            </ul>
           </div>
         </div>
 
        <div class="question">
-          <label for="ask8">¿Puedo realizar operaciones interplaza y sin costo con mi Cuenta Free?</label>
-          <input type="checkbox" id="ask8">
+          <label class="ask"><span>+</span>¿Puedo realizar operaciones interplaza y sin costo con mi Cuenta Free?</label>
           <div class="ans">
             <p>Sí, vas a poder hacerlo siempre.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask9">¿Me cobran por realizar operaciones interplaza con Cuenta Free en Scotiabank y a otros bancos?</label>
-          <input type="checkbox" id="ask9">
+          <label class="ask"><span>+</span>¿Me cobran por realizar operaciones interplaza con Cuenta Free en Scotiabank y a otros bancos?</label>
           <div class="ans">
             <p>No se cobra comisión ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask10">¿Qué es la comisión interplaza?</label>
-          <input type="checkbox" id="ask10">
+          <label class="ask"><span>+</span>¿Qué es la comisión interplaza?</label>
           <div class="ans">
             <p>Es el cobro de la comisión por realizar operaciones en localidades diferentes a aquella donde abriste una cuenta.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask11">¿Me cobran por realizar transferencias a otros bancos?</label>
-          <input type="checkbox" id="ask11">
+          <label class="ask"><span>+</span>¿Me cobran por realizar transferencias a otros bancos?</label>
           <div class="ans">
             <p>No se cobra comisión propia y tampoco comisión CCE por transferencias a otros bancos, ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask12">¿Me cobran por realizar el pago de tarjetas de crédito de otros bancos?</label>
-          <input type="checkbox" id="ask12">
+          <label class="ask"><span>+</span>¿Me cobran por realizar el pago de tarjetas de crédito de otros bancos?</label>
           <div class="ans">
             <p>No se cobra comisión por ese pago, ya sea que lo realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask13">¿Me envían estado de cuenta mensual?</label>
-          <input type="checkbox" id="ask13">
+          <label class="ask"><span>+</span>¿Me envían estado de cuenta mensual?</label>
           <div class="ans">
             <p>No, pero puedes consultar tus saldos y movimientos sin costo a través de Scotia en Línea.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask14">¿Los saldos de esta cuenta están cubiertos por el Fondo de Seguro de Depósitos?</label>
-          <input type="checkbox" id="ask14">
+          <label class="ask"><span>+</span>¿Los saldos de esta cuenta están cubiertos por el Fondo de Seguro de Depósitos?</label>
           <div class="ans">
             <p>Sí, los saldos de todas las cuentas de ahorro están cubiertos por el Fondo de Seguro de Depósitos, el cual varía cada trimestre. Consulta el monto de la cobertura actual enwww.fsd.org.pe.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask15">¿Qué es la TREA?</label>
-          <input type="checkbox" id="ask15">
+          <label class="ask"><span>+</span>¿Qué es la TREA?</label>
           <div class="ans">
             <p>Es la Tasa de Rendimiento Efectivo Anual, que te permite conocer cuánto ganarás efectivamente por el dineroquedeposites, incluyendo los intereses que recibirás y los costos fijos de tu cuenta.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask16">¿Qué es el saldo promedio mensual?</label>
-          <input type="checkbox" id="ask16">
+          <label class="ask"><span>+</span>¿Qué es el saldo promedio mensual?</label>
           <div class="ans">
             <p>Es el monto promedio que hay en tu cuenta en el lapso de un mes o 30 días. Sirve para calcular la TEA (tasa efectiva anual) y los costos de mantenimiento, pues dependen del saldo promedio en la cuenta mensual.</p>
           </div>
         </div>
 
         <div class="question">
-          <label for="ask16">¿Qué es el saldo mínimo de equilibrio para obtener rendimiento?</label>
-          <input type="checkbox" id="ask16">
+          <label class="ask"><span>+</span>¿Qué es el saldo mínimo de equilibrio para obtener rendimiento?</label>
           <div class="ans">
             <p>Es el saldo que se debe mantener en una cuenta de ahorros, sin que se realice transacción alguna, generando los intereses suficientes en un mes (de 30 días), para cubrir las comisiones y los gastos asociados al mantenimiento de la cuenta de ahorros. Al final del mes no se perderá capital ni se ganará rendimiento.</p>
           </div>
@@ -727,15 +719,14 @@
             <li><span></span>Consulta tus saldos y movimientos</li>
             <li><span></span>Haz tus transferencias o realiza tus pagos</li>
           </ul>
+          <a href="#" class="scotia-btn" style="float:right">Ingresa aquí</a>
         </div>
       </div>
 
     </div>
 
     <div class="content gray-mobil">
-
       <h1>Otros productos que te pueden interesar</h1>
-
       <!--  GRID 3 STYLES  -->
       <style type="text/css">
         .grid-3{
@@ -816,7 +807,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
   </div>
@@ -826,13 +816,14 @@
 <script type="text/javascript">
 
   var locations = [
-      ['Coronel Inclan 539', -12.1143855 , -77.0313141, 4],
-      ['Av. El Polo 706', -12.1006847, -76.9713065, 5],
+      ['Scotiabank', -12.0740534 , -77.0214266, 4],
+      ['Scotiabank', -12.0631855, -77.0156135, 5],
+      ['Scotiabank', -12.0691356, -77.0169071, 5]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
-      center: new google.maps.LatLng(-12.111458,-77.0043489),
+      zoom: 12,
+      center: new google.maps.LatLng(-12.0771329,-77.0144379),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
@@ -853,6 +844,23 @@
         }
       })(marker, i));
     }
+
+  // This functions shows the answers of the questions from tab
+  const togglers = document.querySelectorAll('.ask');
+  togglers.forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      if(el.className.indexOf("active") == -1){
+        el.nextElementSibling.style.display = 'block';
+        el.getElementsByTagName('span')[0].innerHTML = '-';
+        el.className = 'ask active';
+        
+      }else{
+        el.nextElementSibling.style.display = 'none';
+        el.getElementsByTagName('span')[0].innerHTML = '+';
+        el.className = 'ask';
+      } 
+    })
+  });
 
   // This function show the content tab
   function showTab(event, currentTab){
@@ -888,7 +896,6 @@
 
     event.currentTarget.className += " active";
   }
-
 </script>
 </body>
 </html>
