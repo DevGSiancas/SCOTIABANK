@@ -4,18 +4,36 @@
   <meta name="viewport" content="width=device-width , initial-scale=1.0">
 </head>
 <body>
-
   <style type="text/css">
-    @font-face{font-family:Frutiger55Roman;src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");}
-    @font-face{font-family:Frutiger55RomanBold;src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");}
-    @font-face{font-family:Arial;src:url("Fonts/Arial.ttf");}
-    body,html{padding:0;margin:0;font-family:Frutiger55Roman, Arial;}
-    strong{font-family:Frutiger55RomanBold;}
 
-    .wrapper{width: 100%;max-width: 980px;margin: auto;}
+    @font-face{
+      font-family:Frutiger55Roman;
+      src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");
+    }
 
-    .wrapper .scotia-btn,
-    .wrapper .scotia-large-btn{
+    @font-face{
+      font-family:Frutiger55RomanBold;
+      src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");
+    }
+
+    body,html{
+      padding:0;
+      margin:0;
+      font-family:Frutiger55Roman, Arial;
+    }
+
+    strong{
+      font-family:Frutiger55RomanBold, Arial;
+    }
+
+    .wrapper{
+      width: 100%;
+      max-width:1000px;
+      margin: auto;
+    }
+
+    .scotia-btn,
+    .scotia-large-btn{
       background:#d81e05;
       display: inline-block;
       text-decoration: none;
@@ -32,12 +50,12 @@
       -ms-transition: background 0.3s;
     }
 
-    .wrapper .scotia-large-btn{
+    .scotia-large-btn{
       padding: 16px 5px;
     }
 
-    .wrapper .scotia-btn:hover,
-    .wrapper .scotia-large-btn:hover{
+    .scotia-btn:hover,
+    .scotia-large-btn:hover{
       background: #b01500;
     }
 
@@ -45,169 +63,84 @@
       text-align:left;
       color:#515151;
       margin:0 30px 30px 30px;
-      font-family: Frutiger55Roman;
+      font-family: Frutiger55Roman , Arial;
+    }
+
+    .content h3{
+      text-align:left;
+      color:#666666;
+      margin:20px 30px 0px 30px;
+      font-family: Frutiger55Roman , Arial;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .content h3 span{
+      width: 0; 
+      height: 0; 
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 14px solid #d81e05;
+      display: inline-block;
+      margin-right: 10px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .content h3 img{
+      height: 45px;
+      margin-right: 14px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
 
     .content p{
       color:#515151;
     }
 
-    .content.center{
-      text-align: center;
-    }
-
-    .content.gray{
-      background:#f2f2f2;
-      padding:25px 0;
-      margin: 25px 0;
-    }
-
-    .content .img-desc{
-      display: inline-block;
-      text-align: center;
-      vertical-align: top;
-      margin: 10px 1.2%;
-      max-width: 190px;
-      width: 22%;
-      color:#666666;
-      font-size: 1.1em;
-    }
-
-    .content .horizontal{
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .content .horizontal .block{
-
-      display: inline-block;
-      vertical-align: top;
-      margin: 10px 0;
-      padding: 20px 2%;
-    }
-
-    .content .horizontal .block h2{
-      color:#fff;
-      text-align: left;
-      margin: 0;
-      text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
-      font-family: Frutiger55RomanBold;
-    }
-
-    .content .horizontal .block p{
-      margin:0 0 15px 0;
-    }
-
-    .content .horizontal .block ul{
-      text-align: left;
-      list-style: none;
-      color:#515151;
-    }
-
-    .content .horizontal .block ul li::before {
-      content: "•"; color: red;
-      display: inline-block; width: 1em;
-      margin-left: -1em
-    }
-
-    .content .horizontal .block.bottom{
-      vertical-align: bottom;
-    }
-
-    .content .horizontal .block.two{
-      width: 25%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.two{
-      width: 58%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.three{
-      width: 30%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.half{
-      width:45%;
-    }
-
-
-
-    @media screen and (max-width: 768px){
-
-      .content .img-desc{
-        display: block;
-        text-align: center;
-        vertical-align: top;
-        margin: 10px auto;
-        max-width: 200px;
-        width: 90%;
-      }
-
-      .content .horizontal .block{
-        display: block;
-      }
-
-      .content .horizontal .block p{
-        max-width: 85%;
-        margin: 12px auto;
-      }
-
-      .content .horizontal .block.three,
-      .content .horizontal .block.half,
-      .content .horizontal .block.two{
-        width: 95%;
-        margin: 20px auto;
+    @media screen and (max-width: 720px){
+      .content h1{
+        margin: 15px;
+        font-size: 1.8em;
       }
     }
   </style>
 
-   <!--  GLOBAL STYLES  -->
-  <style type="text/css">
-    @media screen and (max-width: 768px){
-      .content{margin:10px 0;padding: 10px 0;}
-      .content h1{text-align:center;font-size: 1.8em;margin:5px 0 30px 0;}
-      .content.gray{margin:0}
-      .content .hide-mobil{display:none !important;margin:0;padding:0;}
-      .content .show-mobil{display:block !important;}
-      .content.gray-mobil{background:#f2f2f2;padding: 20px 0;margin: 10px 0;}
-      .content.white-mobil{background:#ffffff;}
-      .content.white-mobil h1{margin:0 0 10px 0;padding:0}
-    }
-  </style>
-
-
-
-  <div class="wrapper">
-
-    <!-- BANNER STYLES -->
+ 
+  <!-- BANNER STYLES -->
     <style type="text/css">
 
       .banner{
         width: 100%;
         max-width: 970px;
-        margin: auto;
+        margin: 0 auto 30px auto;
+        padding-bottom: 20px;
         text-align: center;
         position: relative;
+        background: #f2f2f2;
       }
 
       .banner .bg{
         width: 100%;
         height: 385px;
         background: #242424;
-        background-image: url("Links/background2.jpeg");
+        background-image: url("Images/banners/banner3.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
       }
 
+      .banner p{
+        color: #515151;
+        max-width: 500px;
+        margin: 0 auto 20px auto;
+        padding: 0;
+      }
+
       .banner .desc{
-        top: 12%;
+        top: 8%;
         left: 50px;
         position: absolute;
         max-width: 380px;
@@ -222,7 +155,7 @@
       .banner .title{
         color:#515151;
         margin: 40px 15px 20px 15px;
-        font-size: 2.25em;
+        font-size: 2em;
         display: inline-block;
         text-align: center;
         font-family: Frutiger55RomanBold;
@@ -239,6 +172,10 @@
       .banner span.red{color:#d81e05}
 
       @media screen and (max-width: 768px){
+
+          .banner{
+            background: #ffffff;
+          }
 
           .banner .bg{
             height: 225px;
@@ -260,6 +197,13 @@
             max-width: 360px;
           }
 
+          .banner p{
+            width: 80%;
+            max-width: 400px;
+            text-align: left;
+            text-align: justify;
+          }
+
           .banner .desc .title{
             padding: 15px 20px 0 20px;
             margin: 15px 0 0 0;
@@ -267,543 +211,171 @@
           }
       }
     </style>
-    <div class="banner">
-      <div class="bg"></div>
-      <div class="desc">
-        <h1>
-          <span class="gold">Tu</span> <span class="orange">banco.</span> <span class="pink">Tu</span> <span class="blue">cuenta.</span> <span class="green">Tu</span> <span class="yellow">manera</span> <span class="purple">de</span> <span class="maroon">ahorrar.</span>
-        </h1>
-        <a href="#" class="scotia-large-btn">Desúbrela aquí</a>
-      </div>
-      <label class="title">¿Por qué elegir una CUENTA FREE?</label>
-    </div>
 
-    <!-- IMAGES DESC STYLES -->
-    <div class="content center">
-      <div class="img-desc">
-        <img src="Icons/dollar.png">
-        <p>Sin costo de mantenimiento</p>
-      </div>
-      <div class="img-desc">
-        <img src="Icons/card.png">
-        <p>Sin costo por retiros ilimitados desde la red de cajeros Scotiabank</p>
-      </div>
-      <div class="img-desc">
-        <img src="Icons/money.png">
-        <p>Sin costo por transferencias vía internet</p>
-      </div>
-      <div class="img-desc">
-        <img src="Icons/send.png">
-        <p>Sin costo por transferencias ilimitadas</p>
-      </div>
-    </div>
+  <style type="text/css">
+    .grid-3{
+        width: 95%;
+        margin: 10px auto;
+        position: relative;
+    }
 
-    <!-- TAB STYLES -->
-    <style type="text/css">
-      .tabs{padding:40px;background:#f2f2f2;}
-      .tab-header{text-align:center;color:#515151;}
-      .tab-header span{display:inline-block;cursor:pointer;text-align:left;padding:15px 0px 8px 10px;width:22.5%;font-size:0.9em}
+    .grid-3 .grid{
+      width: 31%;
+      margin: 1.25% 1%;
+      background: #f2f2f2;
+      text-align: center;
+      padding-bottom: 20px;
+      display: inline-block;
+      vertical-align: top;
+    }
 
-      .tab-header .blue{border-bottom:3px solid #3399CC;}
-      .tab-header .purple{border-bottom:3px solid #663399;}
-      .tab-header .orange{border-bottom:3px solid #FF6600;}
-      .tab-header .yellow{border-bottom:3px solid #FFCC00;}
+    .grid-3 .grid .bg{
+      width: 100%;
+      padding-bottom: 90%;
+      background: #242424;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-      .tab-header .blue.active{background:#3399CC;color:#fff;}
-      .tab-header .purple.active{background:#663399;color:#fff;}
-      .tab-header .orange.active{background:#FF6600;color:#fff;}
-      .tab-header .yellow.active{background:#FFCC00;color:#fff;}
+    .grid-3 .grid p{
+      max-width: 90%;
+      text-align: left;
+      margin: 14px auto;
+      font-size: 0.95em;
+    }
 
-      .tab-content{display: none;padding:30px 0 20px 0;font-size:0.92em}
-      .tab-content strong{padding-left:25px;color:#515151;}
-      .tab-content ul li{color:#666666;padding:8px 8px 8px 30px;}
+    .grid-3 .grid .corner{
+      float: right;
+      width: 55px;
+      margin-top: -4px;
+    }
 
-      .tab-content#tab1{border-bottom:3px solid #3399CC;}
-      .tab-content#tab2{border-bottom:3px solid #663399;}
-      .tab-content#tab3{border-bottom:3px solid #FF6600;}
-      .tab-content#tab4{border-bottom:3px solid #FFCC00;}
+    @media screen and (max-width:1020px){
 
-      .tab-content .question{margin: 15px}
-      .tab-content .question label{color:#515151;cursor:pointer;padding-left:30px;position:relative;display: block;}
-      .tab-content .question label::before{content:"+";border:1px solid #515151;text-align:center;padding:0 2px;
-                                           color:#515151;width:1em;margin-right:10px;position: absolute;left: 0;}
-      .tab-content .question div{display: none;}
-      .tab-content .question input{opacity:0;position:absolute;float:left;}
-      .tab-content .question input:checked + .ans{display: block}
-      .tab-content .question p{padding: 3px 5px 20px 30px;color:#666666;border-bottom:1px solid #666666}
-
-      @media screen and (max-width: 768px){
-        .tabs{padding:0}
-        .tab-header span{display:block;padding:15px 2% 8px 2%;width:96%}
-
-        .tab-content strong{padding:8px;}
-        .tab-content ul li{padding:8px 14px 8px 0px;}
+      .content h1{
+        text-align: center;
       }
-    </style>
-    <div class="tabs">
 
-      <div class="tab-header">
-        <span class="tablink blue active" onClick="showTab(event, 'tab1')">BENEFICIOS</span>
-        <span class="tablink purple" onClick="showTab(event, 'tab2')">REQUISITOS</span>
-        <span class="tablink orange" onClick="showTab(event, 'tab3')">PREGUNTAS FRECUENTES</span>
-        <span class="tablink yellow" onClick="showTab(event, 'tab4')">DOCUMENTOS</span>
-      </div>
+      .grid-3{
+        width: 100%;
+        max-width: 650px;
+      }
+      
+      .grid-3 .grid{
+        width: 45%;
+        margin: 1.8% 2.25%;
+      }
+    }
 
-      <div class="tab-content" id="tab1" style="display:block">
-        <ul>
-          <li>Sin costo de mantenimiento, ni monto mínimo de apertura.</li>
-          <li>Retiros y depósitos ilimitados en ventanilla, sin importar dónde los realices.</li>
-          <li>Operaciones ilimitadas y sin costo de transferencias, vía CCE por internet y ventanillas, sin importar dónde los realices.</li>
-          <li>Retiros sin costo en todos los cajeros automáticos de la red Scotiabank.</li>
-          <li>Consumos sin costo con tu Tarjeta de Débito ScotiaCard en miles de establecimientos afiliados.</li>
-          <li>Sin costo en pagos, transferencias, consultas de saldos y movimientos en nuestros canales virtuales (Scotia en Línea y Banca Móvil), terminales de pagos y consultas, cajeros automáticos de la red Scotiabank y banca telefónica.</li>
-          <li>Sin costo de mantenimiento para la Tarjeta de Débito Clásica.</li>
-        </ul>
-      </div>
 
-      <div class="tab-content" id="tab2">
-        <ul>
-          <li>Copia de tu documento de identidad</li>
-          <li>Registro de firmas</li>
-          <li>Contrato de Servicios Bancarios - Condiciones Generales - Persona Natural</li>
-          <li>Contrato de Cuenta de Ahorro - Condiciones Específicas (soles)</li>
-          <li>Contrato de Cuenta de Ahorro - Condiciones Específicas (dólares)</li>
-        </ul>
-      </div>
+    @media screen and (max-width:720px){
 
-      <div class="tab-content" id="tab3">
+      .grid-3{
+        text-align: center;
+      }
 
-        <div class="question">
-          <label for="ask1">¿Qué es la Cuenta Free?</label>
-          <input type="checkbox" id="ask1">
-          <div class="ans">
-            <p>Es una cuenta diseñada para que realices operaciones ilimitadas, sin costo, en todo el Perú.</p>
-          </div>
+      .grid-3 .grid{
+        margin: 15px auto;
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .grid-3 .grid img{
+        max-width: 420px;
+      }
+
+      .slider{
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .slider .slide{
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="wrapper">
+    
+    <div class="banner">
+        <div class="bg"></div>
+        <div class="desc">
+          <h1>
+            <span class="gold">Tu</span> <span class="orange">banco.</span> <span class="pink">Tu</span> <span class="blue">cuenta.</span> <span class="green">Tu</span> <span class="yellow">manera</span> <span class="purple">de</span> <span class="maroon">ahorrar</span>
+          </h1>
+          <a href="#" class="scotia-large-btn">Descúbrela aquí</a>
         </div>
-
-        <div class="question">
-          <label for="ask2">¿Dónde puedo abrir una Cuenta Free?</label>
-          <input type="checkbox" id="ask2">
-          <div class="ans">
-            <p>En cualquier agencia de la red Scotiabank Perú.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask3">¿Me cobran comisión por mantenimiento de cuenta?</label>
-          <input type="checkbox" id="ask3">
-          <div class="ans">
-            <p>No cobramos comisión, independientemente del saldo de tu cuenta.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask4">¿Hay un monto mínimo para abrir esta cuenta?</label>
-          <input type="checkbox" id="ask4">
-          <div class="ans">
-            <p>No, puedes abrirla con el monto que desees.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask5">¿Cuántas transacciones libres en ventanilla tengo al mes?</label>
-          <input type="checkbox" id="ask5">
-          <div class="ans">
-            <p>Tienes transacciones ilimitadas y sin costo, hasta el monto máximo permitido por operación.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask6">¿Puedo realizar retiros desde la red de cajeros Scotiabank sin costo?</label>
-          <input type="checkbox" id="ask6">
-          <div class="ans">
-            <p>Sí, los retiros son ilimitados y sin costo, hasta el monto máximo permitido por operación.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask7">¿Cuáles son las principales ventajas que me da la Cuenta Free?</label>
-          <input type="checkbox" id="ask7">
-          <div class="ans">
-            <p>
-                1. Sin costo de mantenimiento, ni monto mínimo de apertura.
-                2. Retiros y depósitos ilimitados en ventanilla, sin importar dónde los
-                realices.
-                3. Operaciones ilimitadas y sin costo de transferencias, vía CCE por
-                Internet y ventanillas, sin importar dónde los realices.
-                4. Retiros sin costo en todos los cajeros automáticos de la red Scotiabank.
-                5. Consumos sin costo con tu Tarjeta de Débito ScotiaCard en miles de
-                establecimientos afiliados.
-                6. Sin costo en pagos, transferencias, consultas de saldos y movimientos
-                en nuestros canales virtuales (Scotia en Línea y Banca Móvil),
-                terminales de pagos y consultas, cajeros automáticos de la red
-                Scotiabank y banca telefónica.
-                7. Sin costo de mantenimiento para la Tarjeta de Débito Clásica.
-            </p>
-          </div>
-        </div>
-
-       <div class="question">
-          <label for="ask8">¿Puedo realizar operaciones interplaza y sin costo con mi Cuenta Free?</label>
-          <input type="checkbox" id="ask8">
-          <div class="ans">
-            <p>Sí, vas a poder hacerlo siempre.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask9">¿Me cobran por realizar operaciones interplaza con Cuenta Free en Scotiabank y a otros bancos?</label>
-          <input type="checkbox" id="ask9">
-          <div class="ans">
-            <p>No se cobra comisión ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask10">¿Qué es la comisión interplaza?</label>
-          <input type="checkbox" id="ask10">
-          <div class="ans">
-            <p>Es el cobro de la comisión por realizar operaciones en localidades diferentes a aquella donde abriste una cuenta.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask11">¿Me cobran por realizar transferencias a otros bancos?</label>
-          <input type="checkbox" id="ask11">
-          <div class="ans">
-            <p>No se cobra comisión propia y tampoco comisión CCE por transferencias a otros bancos, ya sea que las realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask12">¿Me cobran por realizar el pago de tarjetas de crédito de otros bancos?</label>
-          <input type="checkbox" id="ask12">
-          <div class="ans">
-            <p>No se cobra comisión por ese pago, ya sea que lo realices por ventanilla, Scotia en Línea o cajeros automáticos de la red Scotiabank.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask13">¿Me envían estado de cuenta mensual?</label>
-          <input type="checkbox" id="ask13">
-          <div class="ans">
-            <p>No, pero puedes consultar tus saldos y movimientos sin costo a través de Scotia en Línea.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask14">¿Los saldos de esta cuenta están cubiertos por el Fondo de Seguro de Depósitos?</label>
-          <input type="checkbox" id="ask14">
-          <div class="ans">
-            <p>Sí, los saldos de todas las cuentas de ahorro están cubiertos por el Fondo de Seguro de Depósitos, el cual varía cada trimestre. Consulta el monto de la cobertura actual enwww.fsd.org.pe.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask15">¿Qué es la TREA?</label>
-          <input type="checkbox" id="ask15">
-          <div class="ans">
-            <p>Es la Tasa de Rendimiento Efectivo Anual, que te permite conocer cuánto ganarás efectivamente por el dineroquedeposites, incluyendo los intereses que recibirás y los costos fijos de tu cuenta.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask16">¿Qué es el saldo promedio mensual?</label>
-          <input type="checkbox" id="ask16">
-          <div class="ans">
-            <p>Es el monto promedio que hay en tu cuenta en el lapso de un mes o 30 días. Sirve para calcular la TEA (tasa efectiva anual) y los costos de mantenimiento, pues dependen del saldo promedio en la cuenta mensual.</p>
-          </div>
-        </div>
-
-        <div class="question">
-          <label for="ask16">¿Qué es el saldo mínimo de equilibrio para obtener rendimiento?</label>
-          <input type="checkbox" id="ask16">
-          <div class="ans">
-            <p>Es el saldo que se debe mantener en una cuenta de ahorros, sin que se realice transacción alguna, generando los intereses suficientes en un mes (de 30 días), para cubrir las comisiones y los gastos asociados al mantenimiento de la cuenta de ahorros. Al final del mes no se perderá capital ni se ganará rendimiento.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="tab-content" id="tab4">
-        <strong>Revisa nuestros documentos en línea. No necesitas imprimirlos, te los daremos en la agencia.</strong>
-        <ul>
-          <li>Tarifario</li>
-          <li>Fórmulas</li>
-          <li>Condiciones Generales y Específicas de Contratación Aplicables al Contrato de Servicios Bancarios Persona Natural - Nueva Apertura en Agencias</li>
-          <li>Cartilla de Información Cuenta de Ahorro Soles (S/.) - Nueva Apertura en Agencias</li>
-          <li>artilla de Información Cuenta de Ahorro Dólares (USD) - Nueva Apertura en Agencias</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="content gray white-mobil">
-
-      <h1>Abre tu Cuenta Free</h1>
-
-      <div class="horizontal">
-        <div class="block three">
-          <p>Si ya tienes un producto con nosotros, puedes abrir tu cuenta en línea usando tu computadora o celular.</p>
-          <a href="#" class="scotia-btn">Soy cliente</a>
-          <br><br><br>
-          <p>Si aún no eres cliente, <strong>visita tu agencia más cercana.</strong></p>
-          <a href="#" class="scotia-btn">Ubícanos</a>
-        </div>
-        <div class="block two hide-mobil">
-          <img src="Images/map.png" class="map" width="85%" style="border:1px solid rgba(0,0,0,0.3)">
-        </div>
-      </div>
-
-      <div class="horizontal hide-mobil" style="background-image:url('Links/background1.jpeg');">
-        <div class="block half bottom">
-          <h2>¿POR QUÉ ES<br>IMPORTANTE AHORRAR?</h2>
-        </div>
-        <div class="block half bottom">
-           <!--  SLIDER TEXT  -->
-          <style type="text/css">
-           .slider-text{
-
-              height: 250px;
-              background: rgba(255,255,255,0.65);
-              margin:10px 0;
-              position: relative;
-              overflow: hidden;
-              white-space: nowrap;
-           }
-
-           .slider-text .slide-page{
-             white-space: normal;
-             width: 80%;
-             height:150px;
-             padding: 0 10%;
-             margin: auto;
-             position: relative;
-             top: 25%;
-             display: none;
-           }
-
-           .slider-text .slide-page label{
-             display: inline-block;
-             float:left;
-             font-size: 4em;
-             vertical-align: top;
-             color: #515151;
-             margin: -10px -10px 0 0;
-           }
-
-           .slider-text .slide-page p{
-             display: inline-block;
-             text-align: left;
-             padding: 0;
-             margin: 0;
-             vertical-align: top;
-             width:70%;
-             font-size: 1.1em;
-           }
-
-           .slider-text .navs{
-             position: absolute;
-             bottom: 5px;
-             margin-left: auto;
-             margin-right: auto;
-             left:0px;
-             right: 0px;
-           }
-
-           .slider-text .navs span{
-             display: inline-block;
-             width: 17px;
-             height:17px;
-             border-radius:50%;
-             margin: 5px 2px;
-             background: #ffffff;
-             cursor:pointer;
-           }
-
-           .slider-text .navs span.active{
-              width: 5px;
-              height:5px;
-              border:6px solid #d81e05;
-           }
-          </style>
-          <div class="slider-text">
-            <div class="slide-page" style="display:block;">
-              <label>1</label>
-              <p>Es un excelente hábito que te impulsa a organizar tus ingresos y priorizar tus necesidades.</p>
-            </div>
-            <div class="slide-page">
-              <label>2</label>
-              <p>Te permite realizar tus sueños a corto y mediano plazo, como el esperado viaje familiar o ese auto que tanto estabas buscando.</p>
-            </div>
-            <div class="slide-page">
-              <label>3</label>
-              <p>Te ayuda a alcanzar las metas más grandes de tu vida, como emprender un negocio propio o adquirir tu primera vivienda.</p>
-            </div>
-            <div class="slide-page">
-              <label>4</label>
-              <p>Asegura un gran futuro para ti y tu familia, brindándoles una mejor calidad de vida.</p>
-            </div>
-            <div class="slide-page">
-              <label>5</label>
-              <p>Además de vivir más tranquilo, te da la seguridad e independencia financiera para afrontar cualquier imprevisto.</p>
-            </div>
-            <div class="navs">
-              <span class="navs-control active" onclick="slideTo(event , 0)"></span>
-              <span class="navs-control" onclick="slideTo(event , 1)"></span>
-              <span class="navs-control" onclick="slideTo(event , 2)"></span>
-              <span class="navs-control" onclick="slideTo(event , 3)"></span>
-              <span class="navs-control" onclick="slideTo(event , 4)"></span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <h1 class="hide-mobil">Scotiabank estés donde estés:</h1>
-
-      <div class="horizontal hide-mobil">
-        <div class="block one">
-          <img src="Icons/devices.png" width="250">
-        </div>
-        <div class="block zero">
-          <p>Aprovecha nuestros canales digitales para ir al banco, donde y cuando quieras:</p>
-          <ul>
-            <li>Abre tus cuentas y pide préstamos</li>
-            <li>Consulta tus saldos y movimientos</li>
-            <li>Haz tus transferencias o realiza tus pagos</li>
-          </ul>
-        </div>
-      </div>
-
+        <label class="title">Tu cuenta perfecta.</label>
+        <p>Detrás de cada ahorrador, hay una cuenta Scotiabank ideal. ¡Encuentra la tuya al instante!</p>
+        <a href="#" class="scotia-large-btn">Haz el test</a>
     </div>
 
     <div class="content gray-mobil">
-
-      <h1>Otros productos que te pueden interesar</h1>
-
-      <!--  GRID 3 STYLES  -->
-      <style type="text/css">
-        .grid-3{
-          width: 95%;
-          margin: 10px auto;
-          position: relative;
-        }
-
-        .grid-3 .grid{
-          width: 30%;
-          margin: 10px 1.45%;
-          background: #f2f2f2;
-          text-align: center;
-          padding-bottom: 12px;
-          display: inline-block;
-          vertical-align: top;
-        }
-
-        .grid-3 .grid .bg{
-          width: 100%;
-          padding-bottom: 90%;
-          background: #242424;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-
-        .grid-3 .grid p{
-          max-width: 92%;
-          text-align: center;
-        }
-
-        @media screen and (max-width:768px){
-
-          .grid-3{width: 100%;}
-
-          .grid-3 .grid{margin: 0;}
-
-          .grid-3 .grid .bg{
-            width: 240px;
-            height: 240px;
-            padding-bottom: 0%;
-            margin: auto;
-          }
-
-          .grid-3 .grid img{
-            max-width: 420px;
-          }
-
-          .slider{
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-          }
-
-          .slider .slide{
-            width: 100%;
-          }
-        }
-      </style>
+      <h1>Nuestras cuentas</h1>  
+      <h3><img src="Icons/phone.png">Cuentas que puedes abrir online o en agencia</h3>
       <div class="grid-3">
-        <div class="slider">
-          <div class="grid slide">
-            <img src="Images/imgsqr3.png" width="100%">
-            <p>CUENTA POWER</p>
-            <a href="#" class="scotia-btn">Descubre más</a>
+          <div class="grid">
+            <img src="Images/small/shutterstock_536140669.jpeg" width="100%">
+            <img src="Icons/phone-corner.png" class="corner">
+            <p>CUENTA FREE<br><br>¡Tenlo todo, sin costo alguno! Transferencias ilimitadas y sin pago de mantenimiento.</p>
+            <a href="cuenta-free.html" class="scotia-btn">Pídelo aquí</a>
           </div>
-          <div class="grid slide">
-            <img src="Images/imgsqr1.png" width="100%">
-            <p>CUENTA SUELDO</p>
-            <a href="#" class="scotia-btn">Descubre más</a>
+          <div class="grid">
+            <img src="Images/small/shutterstock_1057415918.jpeg" width="100%">
+            <img src="Icons/phone-corner.png" class="corner">
+            <p>CUENTA SUELDO<br><br>Adelanta tu sueldo ¡y disfruta de hasta 70% de dscto. en tus lugares favoritos!</p>
+            <a href="cuenta-free.html" class="scotia-btn">Ábrela aquí</a>
           </div>
-          <div class="grid slide">
-            <img src="Images/imgsqr2.png" width="100%">
-            <p>CUENTA TRAVEL</p>
-            <a href="#" class="scotia-btn">Descubre más</a>
+          <div class="grid">
+            <img src="Images/small/shutterstock_377604361.jpeg" width="100%">
+            <img src="Icons/phone-corner.png" class="corner">
+            <p>CUENTA TRAVEL<br><br>¡Ahorra y gana! Participa del sorteo mensual por un viaje de US$ 20,000.</p><br>
+            <a href="#" class="scotia-btn">Pídelo aquí</a>
           </div>
-        </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_481501276.jpeg" width="100%">
+            <img src="Icons/phone-corner.png" class="corner">
+            <p>CUENTA POWER<br><br>¡Obtén las mejores tasas de interés! Hasta 3.0% por tus ahorros en soles y hasta 0.5% en dólares.</p>
+            <a href="#" class="scotia-btn">Mira las promociones</a>
+          </div>
       </div>
-
+      <h3><span></span>Cuentas que puedes abrir acercándote a una agencia</h3>
+      <div class="grid-3">
+          <div class="grid">
+            <img src="Images/small/shutterstock_515434660.jpeg" width="100%">
+            <p>CUENTA KIDS SCOTIABANK<br><br>Enseña a tus hijos a ahorrar y a usar de forma responsable su dinero.</p><br>
+            <a href="#" class="scotia-btn">Pídelo aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_582040864.jpeg" width="100%">
+            <p>CUENTA RENTA<br><br>Recibe el pago de tu jubilación con los mejores beneficios y descuentos.</p><br>
+            <a href="cuenta-free.html" class="scotia-btn">Ábrela aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_486605548.png" width="100%">
+            <p>CUENTA CTS<br><br>Gana intereses desde el primer día y obtén la mejor rentabilidad en soles y dólares.</p>
+            <a href="#" class="scotia-btn">Pídelo aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_568430953 2.jpeg" width="100%">
+            <p>CUENTA AHORRO HIPOTECARIO<br><br>Cumple el sueño de la casa propia y ten un sustento adicional para acceder a un préstamo.</p>
+            <a href="#" class="scotia-btn">Mira las promociones</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_629040428.jpeg" width="100%">
+            <p>CUENTA EUROS<br><br>Realiza hasta 10 retiros y/o transferencias sin costo en ventanilla al mes.</p>
+            <a href="#" class="scotia-btn">Mira el catálogo</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_46174021.jpeg" width="100%">
+            <p>CUENTA CORRIENTE<br><br>Ábrela en soles o dólares y dispón de tus cheques de inmediato.</p><br>
+            <a href="#" class="scotia-btn">Mira cómo</a>
+          </div>
+      </div>
     </div>
-
   </div>
 
-
-
-<script type="text/javascript">
-
-  // This function show the content tab
-  function showTab(event, currentTab){
-    var tabs = document.getElementsByClassName("tab-content");
-    var tablinks = document.getElementsByClassName("tablink");
-    var len = tabs.length;
-
-    for(var i = 0; i < len; i++)
-      tabs[i].style.display = "none";
-
-    for (var i = 0; i < len; i++)
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-
-    document.getElementById(currentTab).style.display = "block";
-    event.currentTarget.className += " active";
-  }
-
-  // This function show the slide selected
-  function slideTo(event , currentSlide){
-    var slides = document.getElementsByClassName("slide-page");
-    var control = document.getElementsByClassName("navs-control");
-    var len = slides.length;
-
-    for(var i = 0; i < len; i++){
-      if(i == currentSlide)
-        slides[i].style.display = "block";
-      else
-        slides[i].style.display = "none";
-    }
-
-    for (var i = 0; i < len; i++)
-        control[i].className = control[i].className.replace(" active", "");
-
-    event.currentTarget.className += " active";
-  }
-
-</script>
 </body>
 </html>
