@@ -1,219 +1,507 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width , initial-scale=1.0">
 </head>
 <body>
   <style type="text/css">
-    @font-face{font-family:Frutiger55Roman;src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");}
-    @font-face{font-family:Frutiger55RomanBold;src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");}
-    @font-face{font-family:Arial;src:url("Fonts/Arial.ttf");}
-    body,html{padding:0;margin:0;font-family:Frutiger55Roman, Arial;}
-    strong{font-family:Frutiger55RomanBold;}
 
-    .wrapper{width: 100%;max-width: 980px;margin: auto;}
+    @font-face{
+      font-family:Frutiger55Roman;
+      src:url("Fonts/FrutigerLTPro-Roman_VTT.ttf");
+    }
 
-    .wrapper .scotia-btn{
+    @font-face{
+      font-family:Frutiger55RomanBold;
+      src:url("Fonts/FrutigerLTPro-Bold_VTT.ttf");
+    }
+
+    body,html{
+      padding:0;
+      margin:0;
+      font-family:Frutiger55Roman, Arial;
+    }
+
+    strong{
+      font-family:Frutiger55RomanBold, Arial;
+    }
+
+    .wrapper{
+      width: 100%;
+      max-width:1000px;
+      margin: auto;
+    }
+
+    .scotia-btn,
+    .scotia-large-btn{
       background:#d81e05;
       display: inline-block;
       text-decoration: none;
       padding: 12px 5px;
-      width: 181px;
       border-radius: 7px;
       text-align: center;
+      width: 181px;
       color: #fff;
+
+      transition: background 0.3s;
+      -webkit-transition: background 0.3s;
+      -moz-transition: background 0.3s;
+      -o-transition: background 0.3s;
+      -ms-transition: background 0.3s;
     }
 
-    .wrapper .scotia-banner-btn{
-      background:#d81e05;
-      display: inline-block;
-      text-decoration: none;
-      border-radius: 7px;
-      padding: 12px 35px;
-      color: #fff;
+    .scotia-large-btn{
+      padding: 16px 5px;
+    }
+
+    .scotia-btn:hover,
+    .scotia-large-btn:hover{
+      background: #b01500;
     }
 
     .content h1{
       text-align:left;
       color:#515151;
       margin:0 30px 30px 30px;
-      font-family: Frutiger55Roman;
+      font-family: Frutiger55Roman , Arial;
     }
 
     .content p{
       color:#515151;
     }
 
-    .content.center{
-      text-align: center;
+    @media screen and (max-width: 720px){
+      .content h1{
+        margin: 15px;
+        font-size: 1.8em;
+      }
+    }
+  </style>
+
+ 
+  <!--  SLIDER STYLES -->
+  <style type="text/css">
+
+    .slider{
+      width: 100%;
+      height: 450px;
+      position: relative;
+      margin: 0 0 40px 0;
     }
 
-    .content.gray{
-      background:#f2f2f2;
-      padding:25px 0;
-      margin: 25px 0;
+    .slider .slider-inner{
+      height: 405px;
+      width: 100%;
+      position: absolute;
     }
 
-    .content .img-desc{
-      display: inline-block;
-      text-align: center;
-      vertical-align: top;
-      margin: 10px 1.2%;
-      max-width: 190px;
-      width: 22%;
-      color:#666666;
-      font-size: 1.1em;
-    }
-
-    .content .horizontal{
+    .slider-inner .slide{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      margin-bottom: 30px;
+    }
+
+    .slider .desc{
+        top: 5%;
+        left: 12.5%;
+        position: absolute;
+        width: 75%:
+        margin: auto;
+        text-align: left;
+    }
+
+    .slider .desc p{
+      font-size: 1.8em;
+      color: #515151;
+    }
+
+    .slider .desc h1{
+      font-size: 2.25em;
+      font-family: Frutiger55RomanBold, Arial;
+      max-width: 450px;
+    }
+
+    .slider span.gold{color:#CC9900}
+    .slider span.orange{color:#FF6600}
+    .slider span.pink{color:#CC0066}
+    .slider span.blue{color:#3399CC}
+    .slider span.green{color:#666600}
+    .slider span.yellow{color:#FFCC00}
+    .slider span.purple{color:#663399}
+    .slider span.maroon{color:#660000}
+    .slider span.red{color:#d81e05}
+
+    .slider .navs{
+      width: 100%;
+      bottom: 10px;
+      position: absolute;
       text-align: center;
     }
 
-    .content .horizontal .block{
+    .slider .navs span{
+      width: 5px;
+      height: 5px;
+      cursor: pointer;
+      border-radius: 50%;
+      display: inline-block;
+      background: rgba(255,255,255,1);
+      border: 7px solid rgba(255,255,255,0.6);
+    }
 
+    @media screen and (max-width: 720px){
+
+      .slider{
+        height: auto;
+      }
+
+      .slider .slider-inner{
+        height: 250px;
+        position: relative;
+      }
+
+      .slider .desc{
+        background: #f2f2f2;
+        position: relative;
+        overflow: hidden;
+        white-space: normal;
+        padding:5%;
+        top: 0;
+        left: 0;
+      }
+
+      .slider .desc h1{
+        font-size: 2em;
+        margin: 0 0 15px 0;
+        max-width: 420px;
+        text-align: left;
+      }
+
+      .slider .desc p{
+        font-size: 1.5em;
+      }
+
+    }
+  </style>
+
+  <style type="text/css">
+    .grid-3{
+        width: 95%;
+        margin: 10px auto;
+        position: relative;
+    }
+
+    .grid-3 .grid{
+      width: 31%;
+      margin: 1.25% 1%;
+      background: #f2f2f2;
+      text-align: center;
+      padding-bottom: 20px;
       display: inline-block;
       vertical-align: top;
-      margin: 10px 0;
-      padding: 20px 2%;
     }
 
-    .content .horizontal .block h2{
-      color:#fff;
+    .grid-3 .grid .bg{
+      width: 100%;
+      padding-bottom: 90%;
+      background: #242424;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .grid-3 .grid p{
+      max-width: 90%;
       text-align: left;
-      margin: 0;
-      text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
-      font-family: Frutiger55RomanBold;
-    }
-
-    .content .horizontal .block p{
-      margin:0 0 15px 0;
-    }
-
-    .content .horizontal .block ul{
-      text-align: left;
-      list-style: none;
-      color:#515151;
-    }
-
-    .content .horizontal .block ul li::before {
-      content: "•"; color: red;
-      display: inline-block; width: 1em;
-      margin-left: -1em
-    }
-
-    .content .horizontal .block.bottom{
-      vertical-align: bottom;
-    }
-
-    .content .horizontal .block.two{
-      width: 25%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.two{
-      width: 58%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.three{
-      width: 30%;
-      text-align: center;
-    }
-
-    .content .horizontal .block.half{
-      width:45%;
+      margin: 14px auto;
+      font-size: 0.95em;
     }
 
 
+    @media screen and (max-width:1020px){
 
-    @media screen and (max-width: 768px){
-
-      .content .img-desc{
-        display: block;
+      .content h1{
         text-align: center;
-        vertical-align: top;
-        margin: 10px auto;
-        max-width: 200px;
-        width: 90%;
       }
 
-      .content .horizontal .block{
-        display: block;
+      .grid-3{
+        width: 100%;
+        max-width: 650px;
+      }
+      
+      .grid-3 .grid{
+        width: 45%;
+        margin: 1.8% 2.25%;
+      }
+    }
+
+
+    @media screen and (max-width:720px){
+
+      .grid-3{
+        text-align: center;
       }
 
-      .content .horizontal .block p{
-        max-width: 85%;
-        margin: 12px auto;
+      .grid-3 .grid{
+        margin: 15px auto;
+        width: 100%;
+        max-width: 350px;
       }
 
-      .content .horizontal .block.three,
-      .content .horizontal .block.half,
-      .content .horizontal .block.two{
-        width: 95%;
-        margin: 20px auto;
+      .grid-3 .grid img{
+        max-width: 420px;
+      }
+
+      .slider{
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .slider .slide{
+        width: 100%;
       }
     }
   </style>
-   <!--  GLOBAL STYLES  -->
-  <style type="text/css">
-    @media screen and (max-width: 768px){
-      .content{margin:10px 0;padding: 10px 0;}
-      .content h1{text-align:center;font-size: 1.8em;margin:5px 0 30px 0;}
-      .content.gray{margin:0}
-      .content .hide-mobil{display:none !important;margin:0;padding:0;}
-      .content .show-mobil{display:block !important;}
-      .content.gray-mobil{background:#f2f2f2;padding: 20px 0;margin: 10px 0;}
-      .content.white-mobil{background:#ffffff;}
-      .content.white-mobil h1{margin:0 0 10px 0;padding:0}
-    }
-  </style>
 
 
+  <div class="slider">
+    <div class="slider-inner">
+      <div class="slide" style="background-image:url('Links/background3.png')"></div>
+      <div class="navs">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="desc">
+      <h1>
+        <span class="blue">Nueva</span> <span class="yellow">Tarjeta</span> <span class="orange">de</span> <span class="green">Crédito</span> <span class="pink">Visa Smart</span>
+      </h1>
+      <p>Es nueva, es Smart y ahorra<br>en los mejores establecimientos<br>siempre.</p>
+      <a href="descubre-cuenta.html" class="scotia-large-btn">Descúbrela aquí</a>
+    </div>
+  </div>
 
   <div class="wrapper">
-
-
+    <div class="content gray-mobil">
+      <h1>Conoce las novedades que tenemos para ti</h1>  
+      <div class="grid-3">
+          <div class="grid">
+            <img src="Images/small/shutterstock_724547359.jpeg" width="100%">
+            <p>Abre tu Plazo Online desde S/ 1,000 o US$ 500, ¡con una súper tasa!</p>
+            <a href="#" class="scotia-btn">Pídelo aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_612473645.jpeg" width="100%">
+            <p>Abre tu Cuenta Free y viaja al Mundial</p>
+            <a href="#" class="scotia-btn">Ábrela aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_646539634.jpeg" width="100%">
+            <p>Pide tu Adelanto de Sueldo, sin pagar intereses</p>
+            <a href="#" class="scotia-btn">Pídelo aquí</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_1090538399.jpeg" width="100%">
+            <p>Disfruta de promociones exclusivas con nuestras tarjetas</p>
+            <a href="#" class="scotia-btn">Mira las promociones</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_342195878.jpeg" width="100%">
+            <p>Canjea tus Scotiapuntos por increíbles productos</p>
+            <a href="#" class="scotia-btn">Mira el catálogo</a>
+          </div>
+          <div class="grid">
+            <img src="Images/small/shutterstock_515433360.png" width="100%">
+            <p>Vive los espectaculares beneficios y descuentos del ClubS</p>
+            <a href="#" class="scotia-btn">Mira cómo</a>
+          </div>
+      </div>
+    </div>
   </div>
+
+
+<!-- <div id="mySlider"></div>
+<div id="sliderNav">
+    <div id="sliderPrev" onclick="prevSlide();"><img src="images/prev-btn.png"></div>
+    <div id="sliderNext" onclick="nextSlide();"><img src="images/next-btn.png"></div>
+</div>
+
 <script type="text/javascript">
+    
 
-  // This function show the content tab
-  function showTab(event, currentTab){
-    var tabs = document.getElementsByClassName("tab-content");
-    var tablinks = document.getElementsByClassName("tablink");
-    var len = tabs.length;
+/*-----------------------------------------------------------------
+-----------------------------------------------------------------
+----------------------- GLOBAL VARIABLES ------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------*/
 
-    for(var i = 0; i < len; i++)
-      tabs[i].style.display = "none";
 
-    for (var i = 0; i < len; i++)
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+// Used to add a numeric id on slide creation to let us target the element later  
+var slideIndex = 0;
+// Tells us which slide we are on
+var currentSlideIndex = 0;
+// An Array to hold all the slides
+var slideArray = [];
 
-    document.getElementById(currentTab).style.display = "block";
-    event.currentTarget.className += " active";
+
+/*-----------------------------------------------------------------
+-----------------------------------------------------------------
+----------------------- THE TEMPLATE ---------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------*/
+
+
+
+// Template for creating a custom Slide object
+function Slide(title, subtitle, background, link ) {
+  this.title = title;
+  this.subtitle = subtitle;
+  this.background = background;
+  this.link = link;
+  // we need an id to target later using getElementById
+  this.id = "slide" + slideIndex;
+  // Add one to the index for the next slide number
+  slideIndex++;
+  // Add this Slide to our array
+  slideArray.push(this);
+}
+
+
+
+/*-----------------------------------------------------------------
+-----------------------------------------------------------------
+----------------------- SLIDE CREATION ---------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------*/
+
+
+// Creating our slide objects, you can make as many as you want
+
+var walkingDead = new Slide(
+  "The Walking Dead", 
+  "A show about fighting zombies", 
+  "https://acollectivemind.files.wordpress.com/2013/12/season-4-complete-cast-poster-the-walking-dead-the-walking-dead-35777405-2528-670.png", 
+  "http://www.amc.com/shows/the-walking-dead"
+);
+
+var bigBang = new Slide(
+  "The Big Bang Theory", 
+  "A show about Sheldon", 
+  "http://cdn.playbuzz.com/cdn/7b4f711d-2a46-45dc-bea7-85a15ffa587a/b9f955c1-d8ad-4778-862d-e66ec2c38df1.jpg", 
+  "http://www.cbs.com/shows/big_bang_theory/"
+);
+
+var LastMan = new Slide(
+  "The Last Man on Earth", 
+  "A show about loneliness", 
+  "https://www.wired.com/wp-content/uploads/2015/02/LMOE-AliveInTuscon_scene44_0028_hires2.jpg", 
+  "http://www.fox.com/the-last-man-on-earth"
+);
+
+
+
+/*-----------------------------------------------------------------
+-----------------------------------------------------------------
+----------------------- ADD TO WEB PAGE ---------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------*/
+
+
+
+function buildSlider(){
+  // A variable to hold all our HTML
+  var myHTML;
+  
+  // Go through the Array and add the code to our HTML
+  for(var i = 0; i < slideArray.length; i++) {
+    
+    myHTML += "<div id='" + slideArray[i].id + 
+    "' class='singleSlide' style='background-image:url(" + slideArray[i].background + ");'>" + 
+    "<div class='slideOverlay'>" + 
+    "<h1>" + slideArray[i].title + "</h1>" +
+    "<h4>" + slideArray[i].subtitle + "</h4>" +
+    "<a href='" + slideArray[i].link + "' target='_blank'>Open Link</a>" +
+    "</div>" +
+    "</div>"; 
+    
   }
+  
+  // Print our HTML to the web page
+  document.getElementById("mySlider").innerHTML = myHTML;
+    
+  // Display the first slide
+  document.getElementById("slide" + currentSlideIndex).style.left = 0;
 
-  // This function show the slide selected
-  function slideTo(event , currentSlide){
-    var slides = document.getElementsByClassName("slide-page");
-    var control = document.getElementsByClassName("navs-control");
-    var len = slides.length;
+}
 
-    for(var i = 0; i < len; i++){
-      if(i == currentSlide)
-        slides[i].style.display = "block";
-      else
-        slides[i].style.display = "none";
-    }
+// Create our slider
+buildSlider();
 
-    for (var i = 0; i < len; i++)
-        control[i].className = control[i].className.replace(" active", "");
 
-    event.currentTarget.className += " active";
-  }
 
-</script>
+
+
+/*-----------------------------------------------------------------
+-----------------------------------------------------------------
+----------------------- SLIDER CONTROLS ---------------------------
+-----------------------------------------------------------------
+-----------------------------------------------------------------*/
+
+
+
+// Navigates to the previous slide in the list
+function prevSlide(){
+  // Figure out what the previous slide is
+  var nextSlideIndex;
+  // If we are at zero go to the last slide in the list
+  if (currentSlideIndex === 0 ) {
+    nextSlideIndex = slideArray.length - 1;
+  } else {
+    // Otherwise the next one is this slide minus 1
+    nextSlideIndex = currentSlideIndex - 1;
+  } 
+  
+  // Setup the next slide and current slide for animations
+  document.getElementById("slide" + nextSlideIndex).style.left = "-100%";
+  document.getElementById("slide" + currentSlideIndex).style.left = 0;
+  
+  // Add the appropriate animation class to the slide
+  document.getElementById("slide" + nextSlideIndex).setAttribute("class", "singleSlide slideInLeft");
+  document.getElementById("slide" + currentSlideIndex).setAttribute("class", "singleSlide slideOutRight");
+  
+  // Set current slide to the new current slide
+  currentSlideIndex = nextSlideIndex;
+}
+
+
+// Navigates to the next slide in the list
+function nextSlide(){
+  // Figure out what the next slide is
+  var nextSlideIndex;
+  // If we are at the last slide the next one is the first (zero based)
+  if (currentSlideIndex === (slideArray.length - 1) ) {
+    nextSlideIndex = 0;
+  } else {
+    // Otherwise the next slide is the current one plus 1
+    nextSlideIndex = currentSlideIndex + 1;
+  } 
+  
+  // Setup the next slide and current slide for animations
+  document.getElementById("slide" + nextSlideIndex).style.left = "100%";
+  document.getElementById("slide" + currentSlideIndex).style.left = 0;
+  
+  // Add the appropriate animation class to the slide
+  document.getElementById("slide" + nextSlideIndex).setAttribute("class", "singleSlide slideInRight");
+  document.getElementById("slide" + currentSlideIndex).setAttribute("class", "singleSlide slideOutLeft");
+  
+  // Set current slide to the new current slide
+  currentSlideIndex = nextSlideIndex;
+}
+</script> -->
 </body>
 </html>
